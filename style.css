@@ -1,0 +1,15 @@
+body {
+    font-family: 'Noto Sans', sans-serif;
+}
+.header {
+    font-size: 25px;
+    padding: 40px;
+    background-color: #ffef31;
+}
+.map {
+    width: 100%;
+}
+.map iframe {
+    width: 100%;
+    min-height: 400px;
+}
