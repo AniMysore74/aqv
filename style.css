@@ -1,15 +1,66 @@
+/* General body styles */
+
 body {
     font-family: 'Noto Sans', sans-serif;
+    height: 100%;
+    margin: 0;
+    padding: 0;
 }
+
+section {
+    position: relative;
+    width: 100%;
+}
+
+
+/* Header */
+
 .header {
     font-size: 25px;
     padding: 40px;
     background-color: #ffef31;
 }
-.map {
+
+
+/* Areawise Map */
+
+.areawise {
+    padding: 40px;
+    background-color: #f6f5f2;
+}
+
+
+/* Always set the map height explicitly to define the size of the div
+* element that contains the map. */
+
+#map {
+    height: 100%;
+    width: 100%;
+    height: 300px;
+}
+
+#map iframe {
     width: 100%;
 }
-.map iframe {
-    width: 100%;
-    min-height: 400px;
+
+
+/* Styling for graphs */
+
+.bar {
+    fill: steelblue;
+}
+
+.axis text {
+    font: 10px sans-serif;
+}
+
+.axis path,
+.axis line {
+    fill: none;
+    stroke: #000;
+    shape-rendering: crispEdges;
+}
+
+.x.axis path {
+    display: none;
 }

@@ -1,3 +1,9 @@
+/* Initialize Material */
+
+  $(document).ready(function() {
+    $('select').material_select();
+  });
+   
 /* 
  * httpGet
  * Sends a HTTP GET request asyncronously. Calls callback() when request returns
@@ -22,24 +28,28 @@ function mapify(jsonString)
     var data = JSON.parse(jsonString);
     if(data.meta.found)
     {
+        var markers = [];
+        var infoWindows =[];
         for(var x in data.results)
         {
             var result = data.results[x]
             var contentString = generateContentString(result);
             var latLng = new google.maps.LatLng(result.coordinates.latitude,result.coordinates.longitude);
 
-            var infowindow = new google.maps.InfoWindow({
+            infoWindows[x] = new google.maps.InfoWindow({
                 content: contentString
             });
-
-            var marker = new google.maps.Marker({
+            markers[x] = new google.maps.Marker({
                 position: latLng,
                 map: map,
                 title: result.location
             });
-            marker.addListener('click', function() {
-                infowindow.open(map, marker);
-            });
+            markers[x].addListener('click', function(innerKey) {
+                return function() {
+                    infoWindows[innerKey].open(map, markers[innerKey]);
+                }
+                
+            }(x));
         }
     }
 
@@ -73,6 +83,37 @@ function initMap() {
         center: city
     });
     httpGet("https://api.openaq.org/v1/latest?city=Bengaluru",mapify);
+}
+/*
+ * Event handler
+ * Whenever option is changed 
+*/
+$(".areawise-parameter").change(function(){
+    var val = $(this).val();
+    console.log(val); 
+    if(val!="disabled"){
+        httpGet("https://api.openaq.org/v1/latest?city=Bengaluru&parameter="+val,createView);
+    }
+});
+/*
+ * createView
+ * Sets the right variables and calls plot 
+ */
+function createView(result) {
+    console.log(result);
+    var data = JSON.parse(result);
+    var generated = [];
+    if(data.meta.found) {
+        for(var x in data.results) {
+            var newRow = {};
+            newRow.location = data.results[x].location;
+            newRow.value = data.results[x].measurements[0].value;
+            console.log(JSON.stringify(newRow));
+            generated.push(newRow)
+        }
+    }
+    console.log(JSON.stringify(generated));
+    plot(generated);
 }
 
 var map;
