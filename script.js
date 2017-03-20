@@ -22,24 +22,28 @@ function mapify(jsonString)
     var data = JSON.parse(jsonString);
     if(data.meta.found)
     {
+        var markers = [];
+        var infoWindows =[];
         for(var x in data.results)
         {
             var result = data.results[x]
             var contentString = generateContentString(result);
             var latLng = new google.maps.LatLng(result.coordinates.latitude,result.coordinates.longitude);
 
-            var infowindow = new google.maps.InfoWindow({
+            infoWindows[x] = new google.maps.InfoWindow({
                 content: contentString
             });
-
-            var marker = new google.maps.Marker({
+            markers[x] = new google.maps.Marker({
                 position: latLng,
                 map: map,
                 title: result.location
             });
-            marker.addListener('click', function() {
-                infowindow.open(map, marker);
-            });
+            markers[x].addListener('click', function(innerKey) {
+                return function() {
+                    infoWindows[innerKey].open(map, markers[innerKey]);
+                }
+                
+            }(x));
         }
     }
 
