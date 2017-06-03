@@ -36,7 +36,7 @@ section {
 #map {
     height: 100%;
     width: 100%;
-    height: 300px;
+    height: 500px;
 }
 
 #map iframe {
@@ -64,3 +64,4 @@ section {
 .x.axis path {
     display: none;
 }
+
