@@ -33,7 +33,7 @@ function containsTag(channel, tag)
 */
 function genOAQContent(result,parameter)
 { 
-    var content={}, flag=0, mFill, tFill='000', text;
+    var content={}, flag=0, mFill, tFill='000', text, thresh;
     content.string = '<div id="content">'+
     '<div id="siteNotice">'+
     '</div>'+
@@ -41,14 +41,16 @@ function genOAQContent(result,parameter)
     for(var x in result.measurements)
     {
         var measurement = result.measurements[x];
-        content.string += '<li>' + measurement.parameter + ' : ' + measurement.value + ' ' + measurement.unit + '</li>';
+        thresh=checkThreshold(measurement.parameter, measurement.value,);
         if(measurement.parameter==parameter)
         {
             flag=1;
             text=measurement.value;
             //compute thresholds here and calculate color
-            mFill="fff";
+            mFill=thresh.color;
+
         }
+        content.string += '<li>' + measurement.parameter + ' : ' + measurement.value + ' ' + measurement.unit + ': '+ thresh.message + '</li>';
     }
     if(!flag)
     {
@@ -94,4 +96,20 @@ function genMarker(mFill, tFill,text) {
     image += text;
     image += "%3C/tspan%3E%3C/text%3E%3C/svg%3E";
     return image;
-} 
+}
+
+function checkThreshold(parameter,value) {
+    var data = DataObject.thresholds[parameter];
+    var thresh = {};
+    for(var bucket in data) 
+    {
+           if(value > data[bucket].limit)
+           {
+               console.log(data);
+               thresh.color = data[bucket].color;
+               thresh.message = data[bucket].message
+           }
+        
+    }
+    return thresh;
+}

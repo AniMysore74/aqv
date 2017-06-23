@@ -1,0 +1,215 @@
+{
+    "pm25": [
+        {
+            "limit" : 0,
+            "message" : "Minimal Impact",
+            "color": "13d840"
+        },{
+            "limit" : 30,
+            "message" : "May cause minor breathing discomfort to sensitive people.",
+            "color": "13d840"
+        },
+        {
+            "limit" : 60,
+            "message":  "May cause breathing discomfort to people with lung disease such as asthma, and discomfort to people with heart disease, children and older adults.",
+            "color": "b2ff48"
+        },
+        {
+            "limit" : 90,
+            "message":  "May cause breathing discomfort to people on prolonged exposure, and discomfort to people with heart disease",
+            "color": "fff14f"
+        },
+        {
+            "limit" : 120,
+            "message":  "May cause respiratory illness to the people on prolonged exposure. Effect may be more pronounced in people with lung and heart diseases.",
+            "color": "ffa71a"
+        },
+        {
+            "limit" : 250,
+            "message":  "May cause respiratory impact even on healthy people, and serious health impacts on people with lung/heart disease. The health impacts may be experienced even during light physical activity.",
+            "color": "e95724"
+        }
+    ],
+    "no2": [
+        {
+            "limit" : 0,
+            "message" : "Minimal Impact",
+            "color": "13d840"
+        },
+        {
+            "limit" : 40,
+            "message" : "May cause minor breathing discomfort to sensitive people.",
+            "color": "13d840"
+        },
+        {
+            "limit" : 80,
+            "message":  "May cause breathing discomfort to people with lung disease such as asthma, and discomfort to people with heart disease, children and older adults.",
+            "color": "b2ff48"
+        },
+        {
+            "limit" : 180,
+            "message":  "May cause breathing discomfort to people on prolonged exposure, and discomfort to people with heart disease",
+            "color": "fff14f"
+        },
+        {
+            "limit" : 280,
+            "message":  "May cause respiratory illness to the people on prolonged exposure. Effect may be more pronounced in people with lung and heart diseases.",
+            "color": "ffa71a"
+        },
+        {
+            "limit" : 400,
+            "message":  "May cause respiratory impact even on healthy people, and serious health impacts on people with lung/heart disease. The health impacts may be experienced even during light physical activity.",
+            "color": "e95724"
+        }
+    ],
+    "co": [
+        {
+            "limit" : 0,
+            "message" : "Minimal Impact",
+            "color": "13d840"
+        },
+        {
+            "limit" : 1,
+            "message" : "May cause minor breathing discomfort to sensitive people.",
+            "color": "13d840"
+        },
+        {
+            "limit" : 2,
+            "message":  "May cause breathing discomfort to people with lung disease such as asthma, and discomfort to people with heart disease, children and older adults.",
+            "color": "b2ff48"
+        },
+        {
+            "limit" : 10,
+            "message":  "May cause breathing discomfort to people on prolonged exposure, and discomfort to people with heart disease",
+            "color": "fff14f"
+        },
+        {
+            "limit" : 17,
+            "message":  "May cause respiratory illness to the people on prolonged exposure. Effect may be more pronounced in people with lung and heart diseases.",
+            "color": "ffa71a"
+        },
+        {
+            "limit" : 34,
+            "message":  "May cause respiratory impact even on healthy people, and serious health impacts on people with lung/heart disease. The health impacts may be experienced even during light physical activity.",
+            "color": "e95724"
+        }
+    ],
+    "pm10": [
+        {
+            "limit" : 0,
+            "message" : "Minimal Impact",
+            "color": "13d840"
+        },
+        {
+            "limit" : 50,
+            "message" : "May cause minor breathing discomfort to sensitive people.",
+            "color": "13d840"
+        },
+        {
+            "limit" : 100,
+            "message":  "May cause breathing discomfort to people with lung disease such as asthma, and discomfort to people with heart disease, children and older adults.",
+            "color": "b2ff48"
+        },
+        {
+            "limit" : 250,
+            "message":  "May cause breathing discomfort to people on prolonged exposure, and discomfort to people with heart disease",
+            "color": "fff14f"
+        },
+        {
+            "limit" : 350,
+            "message":  "May cause respiratory illness to the people on prolonged exposure. Effect may be more pronounced in people with lung and heart diseases.",
+            "color": "ffa71a"
+        },
+        {
+            "limit" : 430,
+            "message":  "May cause respiratory impact even on healthy people, and serious health impacts on people with lung/heart disease. The health impacts may be experienced even during light physical activity.",
+            "color": "e95724"
+        }
+    ],
+    "o3": [
+        {
+            "limit" : 0,
+            "message" : "Minimal Impact",
+            "color": "13d840"
+        },
+        {
+            "limit" : 50,
+            "message" : "May cause minor breathing discomfort to sensitive people.",
+            "color": "13d840"
+        },
+        {
+            "limit" : 100,
+            "message":  "May cause breathing discomfort to people with lung disease such as asthma, and discomfort to people with heart disease, children and older adults.",
+            "color": "b2ff48"
+        },
+        {
+            "limit" : 168,
+            "message":  "May cause breathing discomfort to people on prolonged exposure, and discomfort to people with heart disease",
+            "color": "fff14f"
+        },
+        {
+            "limit" : 208,
+            "message":  "May cause respiratory illness to the people on prolonged exposure. Effect may be more pronounced in people with lung and heart diseases.",
+            "color": "ffa71a"
+        },
+        {
+            "limit" : 748,
+            "message":  "May cause respiratory impact even on healthy people, and serious health impacts on people with lung/heart disease. The health impacts may be experienced even during light physical activity.",
+            "color": "e95724"
+        }
+    ],
+    "temp": [
+        {
+            "limit" : 10,
+            "message" : "Clean Air",
+            "color": "13d840"
+        },
+        {
+            "limit" : 20,
+            "message":  " ",
+            "color": "b2ff48"
+        },
+        {
+            "limit" : 20,
+            "message":  " ",
+            "color": "fff14f"
+        },
+        {
+            "limit" : 20,
+            "message":  " ",
+            "color": "ffa71a"
+        },
+        {
+            "limit" : 20,
+            "message":  " ",
+            "color": "e95724"
+        }
+    ],
+    "hum": [
+        {
+            "limit" : 10,
+            "message" : "Clean Air",
+            "color": "13d840"
+        },
+        {
+            "limit" : 20,
+            "message":  " ",
+            "color": "b2ff48"
+        },
+        {
+            "limit" : 20,
+            "message":  " ",
+            "color": "fff14f"
+        },
+        {
+            "limit" : 20,
+            "message":  " ",
+            "color": "ffa71a"
+        },
+        {
+            "limit" : 20,
+            "message":  " ",
+            "color": "e95724"
+        }
+    ]
+}

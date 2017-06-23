@@ -12,7 +12,13 @@ function Data(url,user,aqmTag) {
  * setThresholds
  * Load thresholds from json 
  */
-
+Data.prototype.setThresholds = function() {
+    var obj = this;
+    httpGet("thresholds.json", function(s) {
+        obj.thresholds = JSON.parse(s);
+        console.log(obj.thresholds);
+    });
+}
 /*
  * setOAQData
  * Send http request to get all OAQ Data 

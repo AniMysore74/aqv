@@ -4,7 +4,7 @@ $(document).ready(function() {
 });
 var map;
 var DataObject = new Data("https://api.openaq.org/v1/latest?city=Bengaluru","gautamp@reapbenefit.org", "aqm");
-
+DataObject.setThresholds();
 DataObject.setOAQData();
 /* 
  * initMap
