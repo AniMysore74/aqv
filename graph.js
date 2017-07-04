@@ -2,7 +2,7 @@
  * plot
  * Plots a d3js graph
  */
-function plot(data) {
+function plot(data,threshold) {
     d3.select(".chart").selectAll("*").remove();
     var margin = {
             top: 20,
@@ -64,7 +64,28 @@ function plot(data) {
             .attr("height", function (d) {
                 return height - y(d.value);
             })
+            .attr("style", function(d) {
+                var color;
+                for(var i in threshold) {
+                    if(d.value > threshold[i].limit){
+                        color = threshold[i].color;
+                    }
+                }
+                return "fill:#"+color;
+            })
             .attr("width", Math.min(x.rangeBand(), 100));
+        
+        chart.append("g")
+            .attr("class", "y axis")
+            .call(yAxis)
+            .append("text")
+            .attr("transform", "rotate(-90)")
+            .attr("y", 6)
+            .attr("dy", ".71em")
+            .style("text-anchor", "end")
+            .text(function() {
+                return getUnit();
+            });
     //});
 }
 

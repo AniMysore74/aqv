@@ -90,7 +90,7 @@ Data.prototype.mapify = function(parameter) {
             latLng = new google.maps.LatLng(result.channel.latitude,result.channel.longitude);
         }
         
-        this.infoWindows[x] = new google.maps.InfoWindow({
+        this.infoWindows[x] = new /*google.maps.*/InfoWindow({
             content: content.string
         });
         this.markers[x] = new google.maps.Marker({
@@ -103,12 +103,12 @@ Data.prototype.mapify = function(parameter) {
         // javascript jazz to get around other javascript jazz
         this.markers[x].addListener('click', function(innerKey) {
             return function() {
-                obj.infoWindows[innerKey].open(map, obj.markers[innerKey]);
+                obj.infoWindows[innerKey].open(/*map, obj.markers[innerKey]*/innerKey);
                 for(var i in obj.markers)
                 {
                     if(i!=innerKey)
                     {
-                        obj.infoWindows[i].close(map,obj.markers[x]);
+                        obj.infoWindows[i].close(/*map,obj.markers[x]*/i);
                     }
                 }
             }
@@ -148,5 +148,5 @@ Data.prototype.createView = function(parameter) {
         }
     }
     console.log(JSON.stringify(generated));
-    plot(generated);
+    plot(generated,this.thresholds[parameter]);
 }

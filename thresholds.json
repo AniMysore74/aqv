@@ -69,27 +69,27 @@
             "color": "13d840"
         },
         {
-            "limit" : 1,
+            "limit" : 1000,
             "message" : "May cause minor breathing discomfort to sensitive people.",
             "color": "13d840"
         },
         {
-            "limit" : 2,
+            "limit" : 2000,
             "message":  "May cause breathing discomfort to people with lung disease such as asthma, and discomfort to people with heart disease, children and older adults.",
             "color": "b2ff48"
         },
         {
-            "limit" : 10,
+            "limit" : 10000,
             "message":  "May cause breathing discomfort to people on prolonged exposure, and discomfort to people with heart disease",
             "color": "fff14f"
         },
         {
-            "limit" : 17,
+            "limit" : 17000,
             "message":  "May cause respiratory illness to the people on prolonged exposure. Effect may be more pronounced in people with lung and heart diseases.",
             "color": "ffa71a"
         },
         {
-            "limit" : 34,
+            "limit" : 34000,
             "message":  "May cause respiratory impact even on healthy people, and serious health impacts on people with lung/heart disease. The health impacts may be experienced even during light physical activity.",
             "color": "e95724"
         }
